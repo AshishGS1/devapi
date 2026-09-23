@@ -2,9 +2,8 @@ from pydantic import BaseModel, Field
 
 
 class Developer(BaseModel):
-    """Payload for creating a developer record."""
-
-    id: int = Field(..., description="Unique developer ID — also used as the Qdrant point ID")
+    """Developer record used for create and read operations"""
+    id: int = Field(..., description="Unique developer ID used as the Qdrant point ID")
     name: str
     role: str
     skills: list[str]
@@ -12,7 +11,6 @@ class Developer(BaseModel):
 
 
 class SearchResult(BaseModel):
-    """A developer record plus its cosine-similarity score against a query."""
-
-    developer: Developer
+    """A developer match with its similarity score"""
+    dev: Developer
     score: float
