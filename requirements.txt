@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+qdrant-client
+pydantic
+pydantic-settings
+python-dotenv
+sentence-transformers
